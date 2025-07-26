@@ -1,73 +1,114 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirection...</title>
-  <style>
-    @keyframes backgroundAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Redirecting...</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
-      background-size: 400% 400%;
-      animation: backgroundAnimation 15s ease infinite;
-      color: white;
-      text-align: center;
-      user-select: none;
-    }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+    background-size: 600% 600%;
+    animation: bgGradient 20s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    user-select: none;
+  }
 
-    .container {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 2rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      max-width: 400px;
-      width: 90%;
-    }
+  @keyframes bgGradient {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
 
-    h1 {
-      font-weight: 700;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
+  .container {
+    background: rgba(0,0,0,0.5);
+    padding: 3rem 4rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 200, 0.6);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    animation: fadeInUp 1.2s ease forwards;
+    margin-top: 8vh;
+  }
 
-    p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-  </style>
-  <script>
-    const redirectDelay = 5000;
-    const redirectURL = "https://link-center.net/1227408/ChfNvtKHK4T0";
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
 
-    window.onload = () => {
-      setTimeout(() => {
-        window.location.href = redirectURL;
-      }, redirectDelay);
-    };
-  </script>
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px #00ffc8;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { text-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8, 0 0 30px #00ffc8; }
+    50% { text-shadow: 0 0 20px #00fff0, 0 0 30px #00fff0, 0 0 40px #00fff0; }
+  }
+
+  p {
+    font-size: 1.25rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #00fff0cc;
+    user-select: none;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  a.discord-link {
+    color: #00fff0;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a.discord-link:hover {
+    color: #00b7a8;
+    text-decoration: underline;
+  }
+</style>
+<script>
+  const redirectDelay = 3500;
+  const redirectURL = "https://linkvertise.com/";
+
+  window.onload = () => {
+    setTimeout(() => {
+      window.location.href = redirectURL;
+    }, redirectDelay);
+  };
+</script>
 </head>
 <body>
   <div class="container" role="main" aria-live="polite">
     <h1>Redirecting you...</h1>
-    <p>Please be patient.</p>
+    <p>Please wait a moment while we take you there.</p>
   </div>
+  <footer>
+    Join us on <a href="https://discord.gg/hittasfamily" target="_blank" class="discord-link">Discord</a> &nbsp;|&nbsp; © Hitta - All rights reserved
+  </footer>
 </body>
 </html>
