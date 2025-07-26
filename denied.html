@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Access Denied</title>
+  <style>
+    body {
+      background: #0a1f44;
+      color: #ff6b6b;
+      font-family: 'Inter', sans-serif, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 2rem;
+      user-select: none;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 5px #ff0000;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 400px;
+      opacity: 0.85;
+    }
+    a {
+      margin-top: 1.5rem;
+      color: #ffe066;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Access Denied</h1>
+  <p>
+    Direct access to this page is not allowed.<br />
+    Please use the official link from Linkvertise.<br /><br />
+    You will be redirected to the homepage shortly.
+  </p>
+  <a href="index.html">Go back to homepage</a>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 5000);
+  </script>
+</body>
+</html>

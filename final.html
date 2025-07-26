@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting to Pastebin...</title>
+  <style>
+    body {
+      background: #1e1e1e;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      user-select: none;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://pastebin.com/";
+    }, 3000);
+  </script>
+</head>
+<body>
+  <div class="container" role="main" aria-live="polite">
+    <h1>Redirecting to Pastebin...</h1>
+    <p>Please wait a moment.</p>
+  </div>
+</body>
+</html>
