@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verifying Access...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #0e0e0e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 15%;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .loader {
+      border: 5px solid #333;
+      border-top: 5px solid #00ff88;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Verifying your access...</h1>
+  <div class="loader"></div>
+  <div class="message">Please wait while we check your verification...</div>
+
+  <script>
+    setTimeout(() => {
+      const referer = document.referrer || "";
+      const validSources = [
+        'linkvertise.com',
+        'link-target.net',
+        'link-center.net',
+        'lootlabs.gg',
+        'loot-link.com',
+        'loot-links.com'
+      ];
+
+      console.log("Referrer:", referer);
+
+      const isValid = validSources.some(source => referer.includes(source));
+
+      if (isValid) {
+        console.log("✅ Verified. Redirecting to final.html...");
+        window.location.href = "final.html";
+      } else {
+        console.log("❌ Invalid referrer. Redirecting to denied.html...");
+        window.location.href = "denied.html";
+      }
+    }, 500); // Delay to give time for referrer to load
+  </script>
+
+</body>
+</html>
