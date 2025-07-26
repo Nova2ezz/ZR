@@ -91,11 +91,6 @@
     text-decoration: underline;
   }
 </style>
-<script>
-  setTimeout(() => {
-    window.location.href = "https://pastebin.com/";
-  }, 3000);
-</script>
 </head>
 <body>
   <div class="container" role="main" aria-live="polite">
@@ -108,11 +103,12 @@
 
   <script>
 
-    const ref = document.referrer;
-    const allowedBase = 'https://zr-beryl.vercel.app/';
-    if (!ref.startsWith(allowedBase)) {
-  
-      window.location.href = allowedBase;
+    if (sessionStorage.getItem('verified') !== 'true') {
+      window.location.href = 'verify.html';
+    } else {
+      setTimeout(() => {
+        window.location.href = "https://pastebin.com/";
+      }, 3000);
     }
   </script>
 </body>
