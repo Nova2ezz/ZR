@@ -1,7 +1,126 @@
-<!doctypehtml><html lang=en><meta charset=UTF-8><meta content="IE=edge"http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1"name=viewport><title>Redirecting to Pastebin...</title><style>@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap);body,html{margin:0;padding:0;height:100%;font-family:Poppins,sans-serif;background:linear-gradient(270deg,#0f2027,#203a43,#2c5364);background-size:600% 600%;animation:bgGradient 20s ease infinite;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;color:#f0f0f0;user-select:none}@keyframes bgGradient{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}.container{background:rgba(0,0,0,.6);padding:2.5rem 3rem;border-radius:15px;box-shadow:0 0 25px rgba(0,255,200,.5);max-width:400px;width:90%;text-align:center;margin-top:12vh;animation:fadeInUp 1.2s ease forwards}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}h1{font-size:2.2rem;font-weight:700;margin-bottom:.6rem;text-shadow:0 0 10px #00ffc8;animation:pulseGlow 2.5s ease-in-out infinite}@keyframes pulseGlow{0%,100%{text-shadow:0 0 10px #00ffc8,0 0 20px #00ffc8,0 0 30px #00ffc8}50%{text-shadow:0 0 20px #00fff0,0 0 30px #00fff0,0 0 40px #00fff0}}p{font-size:1.3rem;opacity:.85;margin-bottom:2rem}footer{margin-top:auto;padding:1rem 0;width:100%;text-align:center;font-size:.9rem;color:#00fff0cc;user-select:none;animation:fadeIn 2s ease forwards}@keyframes fadeIn{from{opacity:0}to{opacity:1}}a.discord-link{color:#00fff0;font-weight:700;text-decoration:none;transition:color .3s ease}a.discord-link:hover{color:#00b7a8;text-decoration:underline}</style><div aria-live=polite class=container role=main><h1>Redirecting to Pastebin...</h1><p>Please wait a moment.</div><footer>Join us on <a class=discord-link href=https://discord.gg/hittasfamily target=_blank>Discord</a>  |  © Hitta - All rights reserved</footer><script>if (sessionStorage.getItem('verified') !== 'true') {
-      window.location.href = 'verify.html';
-    } else {
-      setTimeout(() => {
-        window.location.href = "https://pastebin.com/";
-      }, 3000);
-    }</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Redirecting to Pastebin...</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+    background-size: 600% 600%;
+    animation: bgGradient 20s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #f0f0f0;
+    user-select: none;
+  }
+
+  @keyframes bgGradient {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
+  .container {
+    background: rgba(0,0,0,0.6);
+    padding: 2.5rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 255, 200, 0.5);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    margin-top: 12vh;
+    animation: fadeInUp 1.2s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 10px #00ffc8;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { text-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8, 0 0 30px #00ffc8; }
+    50% { text-shadow: 0 0 20px #00fff0, 0 0 30px #00fff0, 0 0 40px #00fff0; }
+  }
+
+  p {
+    font-size: 1.3rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #00fff0cc;
+    user-select: none;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  a.discord-link {
+    color: #00fff0;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a.discord-link:hover {
+    color: #00b7a8;
+    text-decoration: underline;
+  }
+</style>
+<script>
+  const validSources = [
+    'linkvertise.com',
+    'link-target.net',
+    'link-center.net',
+    'lootlabs.gg',
+    'loot-link.com',
+    'loot-links.com'
+  ];
+
+  const ref = document.referrer || '';
+  const fromValidSource = validSources.some(domain => ref.includes(domain));
+  const fromVerifyPage = ref.includes('/verify.html');
+
+  if (!fromValidSource && !fromVerifyPage) {
+    window.location.href = "denied.html";
+  } else {
+    setTimeout(() => {
+      window.location.href = "https://pastebin.com/";
+    }, 3000);
+  }
+</script>
+</head>
+<body>
+  <div class="container" role="main" aria-live="polite">
+    <h1>Redirecting to Pastebin...</h1>
+    <p>Please wait a moment.</p>
+  </div>
+  <footer>
+    Join us on <a href="https://discord.gg/hittasfamily" target="_blank" class="discord-link">Discord</a> &nbsp;|&nbsp; © Hitta - All rights reserved
+  </footer>
+</body>
+</html>
